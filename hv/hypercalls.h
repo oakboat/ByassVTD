@@ -8,7 +8,7 @@ struct vcpu;
 
 // key used for executing hypercalls
 // TODO: compute this at runtime
-inline constexpr uint64_t hypercall_key = 69420;
+inline constexpr uint64_t hypercall_key = 'kong';
 
 // hypercall indices
 enum hypercall_code : uint64_t {

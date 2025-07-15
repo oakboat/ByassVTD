@@ -10,7 +10,7 @@ int main() {
   }
 
   auto const hv_base = static_cast<uint8_t*>(hv::get_hv_base());
-  auto const hv_size = 0x64000;
+  auto const hv_size = 0x1000;
 
   // hide the hypervisor
   hv::for_each_cpu([&](uint32_t) {

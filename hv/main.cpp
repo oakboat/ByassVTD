@@ -20,6 +20,7 @@ void driver_unload(PDRIVER_OBJECT) {
 
 NTSTATUS driver_entry(PDRIVER_OBJECT const driver, PUNICODE_STRING) {
   DbgPrint("[hv] Driver loaded.\n");
+  DbgPrintEx(0, 0, "QQ qun 849446012\n");
 
   if (driver)
     driver->DriverUnload = driver_unload;

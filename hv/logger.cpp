@@ -9,7 +9,7 @@ namespace hv {
 void logger_init() {
   auto& l = ghv.logger;
 
-  memcpy(l.signature, "hvloggerhvlogger", 16);
+  memcpy(l.signature, "bploggerbplogger", 16);
 
   l.lock.initialize();
   l.msg_start = 0;

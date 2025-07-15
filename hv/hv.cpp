@@ -108,7 +108,7 @@ static bool create() {
 
   // allocate an array of vcpus
   ghv.vcpus = static_cast<vcpu*>(ExAllocatePoolWithTag(
-    NonPagedPoolNx, arr_size, 'fr0g'));
+    NonPagedPoolNx, arr_size, 'bump'));
 
   if (!ghv.vcpus) {
     DbgPrint("[hv] Failed to allocate VCPUs.\n");
@@ -184,7 +184,7 @@ void stop() {
     KeRevertToUserAffinityThreadEx(orig_affinity);
   }
 
-  ExFreePoolWithTag(ghv.vcpus, 'fr0g');
+  ExFreePoolWithTag(ghv.vcpus, 'bump');
 }
 
 } // namespace hv

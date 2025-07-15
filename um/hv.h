@@ -6,7 +6,7 @@
 namespace hv {
 
 // key used for executing hypercalls
-inline constexpr uint64_t hypercall_key = 69420;
+inline constexpr uint64_t hypercall_key = 'kong';
 
 // signature that is returned by the ping hypercall
 inline constexpr uint64_t hypervisor_signature = 'fr0g';

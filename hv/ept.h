@@ -7,7 +7,7 @@ namespace hv {
 struct vcpu;
 
 // number of PDs in the EPT paging structures
-inline constexpr size_t ept_pd_count = 64;
+inline constexpr size_t ept_pd_count = 512;
 inline constexpr size_t ept_free_page_count = 100;
 
 // max number of MMRs

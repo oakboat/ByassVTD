@@ -16,6 +16,14 @@ void emulate_cpuid(vcpu* const cpu) {
   int regs[4];
   __cpuidex(regs, ctx->eax, ctx->ecx);
 
+  if (ctx->eax == 0) {
+	  regs[0] = 0x1A;  // AMD处理器通常支持的功能号
+	  // 使用AMD标准厂商字符串 "AuthenticAMD" (12字符)
+	  regs[1] = 0x68747541;  // EBX = "h t u A" (little-endian -> "Auth")
+	  regs[3] = 0x69746E65;  // EDX = "i t n e" (little-endian -> "enti")
+	  regs[2] = 0x444D4163;  // ECX = "D M A c" (little-endian -> "cAMD")
+  }
+
   ctx->rax = regs[0];
   ctx->rbx = regs[1];
   ctx->rcx = regs[2];
